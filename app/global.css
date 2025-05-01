@@ -33,6 +33,7 @@ body {
   overflow-x: hidden;
   font-family: 'Kanit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   background-color: var(--gray-50);
+  font-size: 16px;
 }
 
 body {
@@ -60,6 +61,8 @@ button, .button {
   border: none;
   cursor: pointer;
   transition: all 0.2s;
+  width: 100%; /* ปรับให้ปุ่มเต็มความกว้างบนมือถือ */
+  margin-bottom: 0.5rem;
 }
 
 button:hover, .button:hover {
@@ -81,6 +84,7 @@ input, select, textarea {
   border-radius: 0.375rem;
   margin-bottom: 1rem;
   transition: all 0.2s;
+  font-size: 1rem; /* เพิ่มขนาดฟอนต์ให้อ่านง่ายบนมือถือ */
 }
 
 input:focus, select:focus, textarea:focus {
@@ -94,6 +98,7 @@ label {
   margin-bottom: 0.25rem;
   font-weight: 500;
   color: var(--gray-700);
+  font-size: 0.9rem; /* ปรับขนาดฟอนต์ให้เหมาะสม */
 }
 
 /* Layout utilities */
@@ -124,7 +129,7 @@ label {
 /* Banner */
 .banner {
   width: 100%;
-  height: 250px;
+  height: 200px; /* ลดความสูงของแบนเนอร์บนมือถือ */
   position: relative;
   margin-bottom: 1.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -159,15 +164,15 @@ label {
 }
 
 .banner-text h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 1.75rem; /* ลดขนาดฟอนต์บนมือถือ */
+  margin-bottom: 0.5rem;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .banner-text p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  font-size: 1rem; /* ลดขนาดฟอนต์บนมือถือ */
+  margin-bottom: 1rem;
   color: white;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
@@ -177,10 +182,11 @@ label {
   background-color: white;
   border-radius: 0.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  padding: 1.5rem;
+  padding: 1.25rem; /* ลด padding บนมือถือ */
   text-align: center;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
   border-top: 3px solid var(--primary-light);
+  margin-bottom: 1rem; /* เพิ่มระยะห่างระหว่าง cards */
 }
 
 .stats-card:hover {
@@ -193,14 +199,14 @@ label {
 }
 
 .stats-card h3 {
-  font-size: 1.25rem;
+  font-size: 1.1rem; /* ลดขนาดฟอนต์บนมือถือ */
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   color: var(--gray-700);
 }
 
 .stats-value {
-  font-size: 2rem;
+  font-size: 1.75rem; /* ลดขนาดฟอนต์บนมือถือ */
   font-weight: 700;
   margin-bottom: 0.25rem;
   color: var(--primary-color);
@@ -215,7 +221,7 @@ label {
 }
 
 .stats-label {
-  font-size: 1rem;
+  font-size: 0.9rem; /* ลดขนาดฟอนต์บนมือถือ */
   color: var(--gray-600);
 }
 
@@ -246,7 +252,7 @@ label {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
-/* Responsive table */
+/* Table styles */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -254,12 +260,14 @@ table {
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1rem;
 }
 
 th, td {
   padding: 0.75rem;
   text-align: left;
   border-bottom: 1px solid var(--gray-200);
+  font-size: 0.9rem; /* ลดขนาดฟอนต์บนมือถือ */
 }
 
 th {
@@ -272,40 +280,48 @@ tr:hover {
   background-color: var(--gray-50);
 }
 
-/* Responsive design ปรับแต่งสำหรับมือถือ */
-@media (max-width: 1024px) {
-  .stats-value {
-    font-size: 1.75rem;
-  }
-  
-  .banner {
-    height: 160px;
-  }
-}
-
+/* Responsive design */
 @media (max-width: 768px) {
   html, body {
     font-size: 14px;
   }
-  
+
   .container {
-    padding: 0 0.5rem;
+    padding: 0 0.75rem;
   }
-  
+
+  .banner {
+    height: 160px;
+  }
+
+  .banner-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .banner-text p {
+    font-size: 0.9rem;
+  }
+
   .stats-card {
     padding: 1rem;
   }
-  
+
   .stats-value {
     font-size: 1.5rem;
   }
-  
+
+  .stats-card h3 {
+    font-size: 1rem;
+  }
+
   th, td {
     padding: 0.5rem;
+    font-size: 0.8rem;
   }
-  
-  .banner {
-    height: 180px;
+
+  /* ซ่อนคอลัมน์ที่ไม่จำเป็นบนมือถือ */
+  th:nth-child(4), td:nth-child(4) {
+    display: none;
   }
 }
 
@@ -313,33 +329,54 @@ tr:hover {
   .banner {
     height: 140px;
   }
-  
-  html, body {
-    font-size: 12px;
+
+  .banner-text h2 {
+    font-size: 1.25rem;
   }
-  
-  .container {
-    padding: 0 0.5rem;
+
+  .banner-text p {
+    font-size: 0.8rem;
   }
-  
-  .banner h2 {
-    font-size: 1.75rem;
+
+  .stats-card {
+    padding: 0.75rem;
   }
-  
-  .banner p {
-    font-size: 1rem;
-  }
-  
-  .stats-card h3 {
-    font-size: 1rem;
-  }
-  
+
   .stats-value {
     font-size: 1.25rem;
   }
-  
-  th:nth-child(4), td:nth-child(4) {
-    display: none; /* ซ่อนคอลัมน์หมายเหตุบนมือถือ */
+
+  .stats-card h3 {
+    font-size: 0.9rem;
+  }
+
+  /* ปรับขนาดฟอนต์ให้เล็กลงอีก */
+  html, body {
+    font-size: 12px;
+  }
+}
+
+/* ปรับปรุงการแสดงผลบนมือถือ */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr; /* แสดงเป็นคอลัมน์เดียวบนมือถือ */
+    gap: 1rem;
+  }
+
+  .card {
+    margin-bottom: 1rem;
+  }
+
+  /* ปรับขนาดปุ่มให้ใหญ่ขึ้นบนมือถือ */
+  button, .button {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  /* ปรับขนาด input ให้ใหญ่ขึ้นบนมือถือ */
+  input, select, textarea {
+    padding: 1rem;
+    font-size: 1rem;
   }
 }
 
