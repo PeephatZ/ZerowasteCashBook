@@ -1,0 +1,8 @@
+{
+  "/page": "app/page.js",
+  "/api/income/route": "app/api/income/route.js",
+  "/api/expense/route": "app/api/expense/route.js",
+  "/api/reset/route": "app/api/reset/route.js",
+  "/admin/page": "app/admin/page.js",
+  "/admin/reset/page": "app/admin/reset/page.js"
+}

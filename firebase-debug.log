@@ -1,0 +1,47 @@
+[debug] [2025-04-23T07:34:11.613Z] ----------------------------------------------------------------------
+[debug] [2025-04-23T07:34:11.617Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\pp_ou\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2025-04-23T07:34:11.618Z] CLI Version:   14.2.0
+[debug] [2025-04-23T07:34:11.618Z] Platform:      win32
+[debug] [2025-04-23T07:34:11.618Z] Node Version:  v22.14.0
+[debug] [2025-04-23T07:34:11.619Z] Time:          Wed Apr 23 2025 14:34:11 GMT+0700 (เวลาอินโดจีน)
+[debug] [2025-04-23T07:34:11.619Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-04-23T07:34:11.918Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-04-23T07:34:11.919Z] > authorizing via signed-in user (depresodff@gmail.com)
+[debug] [2025-04-23T07:34:11.919Z] [iam] checking project zerowallet-6c8b0 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-04-23T07:34:11.922Z] Checked if tokens are valid: true, expires at: 1745397101266
+[debug] [2025-04-23T07:34:11.922Z] Checked if tokens are valid: true, expires at: 1745397101266
+[debug] [2025-04-23T07:34:11.924Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/zerowallet-6c8b0:testIamPermissions [none]
+[debug] [2025-04-23T07:34:11.924Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/zerowallet-6c8b0:testIamPermissions x-goog-quota-user=projects/zerowallet-6c8b0
+[debug] [2025-04-23T07:34:11.925Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/zerowallet-6c8b0:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-04-23T07:34:13.206Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/zerowallet-6c8b0:testIamPermissions 200
+[debug] [2025-04-23T07:34:13.206Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/zerowallet-6c8b0:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-04-23T07:34:13.207Z] Checked if tokens are valid: true, expires at: 1745397101266
+[debug] [2025-04-23T07:34:13.207Z] Checked if tokens are valid: true, expires at: 1745397101266
+[debug] [2025-04-23T07:34:13.207Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/zerowallet-6c8b0 [none]
+[debug] [2025-04-23T07:34:13.626Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/zerowallet-6c8b0 200
+[debug] [2025-04-23T07:34:13.626Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/zerowallet-6c8b0 {"projectId":"zerowallet-6c8b0","projectNumber":"751969899522","displayName":"ZeroWallet","name":"projects/zerowallet-6c8b0","resources":{"hostingSite":"zerowallet-6c8b0"},"state":"ACTIVE","etag":"1_98525917-eef6-44bb-91b9-39a1a38d930d"}
+[info] 
+[info] === Deploying to 'zerowallet-6c8b0'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2025-04-23T07:34:13.637Z] Checked if tokens are valid: true, expires at: 1745397101266
+[debug] [2025-04-23T07:34:13.637Z] Checked if tokens are valid: true, expires at: 1745397101266
+[debug] [2025-04-23T07:34:13.637Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/zerowallet-6c8b0/versions [none]
+[debug] [2025-04-23T07:34:13.637Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/zerowallet-6c8b0/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-04-23T07:34:14.736Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/zerowallet-6c8b0/versions 500
+[debug] [2025-04-23T07:34:14.736Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/zerowallet-6c8b0/versions {"error":{"code":500,"message":"Internal error encountered.","status":"INTERNAL"}}
+[error] 
+[error] Error: Request to https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/zerowallet-6c8b0/versions had HTTP Error: 500, Internal error encountered.
+[debug] [2025-04-23T07:34:14.778Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "Internal error encountered.",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500
+  }
+}
